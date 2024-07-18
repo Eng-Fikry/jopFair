@@ -2,10 +2,10 @@
 
 async function customersAndTransactions(){
 
-    const customers= await fetch(`http://localhost:3000/customers`)
+    const customers= await fetch(`https://6694c0494bd61d8314c87470.mockapi.io/api/Data/customers`)
     const cData= await customers.json()
 
-    const transactions= await fetch(`http://localhost:3000/transactions`)
+    const transactions= await fetch(`https://6694c0494bd61d8314c87470.mockapi.io/api/Data/transactions`)
     const tData= await transactions.json()
 
     display(cData,tData)
