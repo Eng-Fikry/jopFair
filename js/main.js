@@ -5,13 +5,10 @@ async function customersAndTransactions(){
     const customers= await fetch(`http://localhost:3000/customers`)
     const cData= await customers.json()
 
-
     const transactions= await fetch(`http://localhost:3000/transactions`)
     const tData= await transactions.json()
 
     display(cData,tData)
-    
-
 }
 //call
 customersAndTransactions()
@@ -19,14 +16,11 @@ customersAndTransactions()
 //  function to display data
 
 function display(cData,tData){
-
     let data=``
 
     for(let i=0;i<cData.length;i++){
         for(let k=0; k<tData.length;  k++){
-
             if(tData[k].customer_id==cData[i].id){
-                
                 data +=`
                 <tr>
                     <td>${tData[k].id}</td>
@@ -37,14 +31,10 @@ function display(cData,tData){
                     <td ><button data-id="${cData[i].id}"   data-name="${cData[i].name}"   class="btn btn-primary">Graph</button></td>
                 </tr>
                 `
-                
             }
         }
-            
-        
     }
     document.getElementById("table").innerHTML= data
-
     char(tData)
     search(cData,tData)
     
@@ -66,7 +56,6 @@ function search(cData,tData){
                     for(let k=0;  k<tData.length;  k++){
                         if(cData[i].name.toLowerCase().includes(search.toLowerCase())){
                         if(tData[k].customer_id==cData[i].id){
-                            
                             name +=`
                             <tr>
                                 <td>${tData[k].id}</td>
@@ -78,17 +67,13 @@ function search(cData,tData){
                             </tr>
                             
                             `
-                            
                         }
                     }
-            
-                    }
                 }
+            }
 
                 document.getElementById("table").innerHTML= name
                 char(tData)
-
-    
             }
             //search by amount
             else{
@@ -97,8 +82,6 @@ function search(cData,tData){
                     for(let k=0;k<tData.length;  k++){
                         if((JSON.stringify(tData[k].amount)).includes(search)){
                         if(tData[k].customer_id==cData[i].id){
-                            
-                            
                             amount +=`
                             <tr>
                                 <td>${tData[k].id}</td>
@@ -110,25 +93,17 @@ function search(cData,tData){
                             </tr>
                             
                             `
-                            
                         }
-                        
                     }
-                    
-            
-                    }
-                        
-            
                 }
-
+            }
                 document.getElementById("table").innerHTML= amount
                 char(tData)
             }
-    
         })
     })
 }
-
+//chart
 function char(tData) {
     document.querySelectorAll("button").forEach((click)=>{
 
@@ -145,10 +120,8 @@ function char(tData) {
                         name: naem + "'s Transaction Amount",
                         values: customerTransactions.map(t => t.amount),
                     },
-                    
                 ]
             }
-            
             const chart = new frappe.Chart("#chart", {  
                                                         
                 title: `${naem} Chart`,
@@ -157,9 +130,6 @@ function char(tData) {
                 height: 250,
                 colors: ['#7cd6fd', '#743ee2']
             })
-       
-        
         })
     })
-    
 }
