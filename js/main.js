@@ -51,10 +51,6 @@ function display(cData,tData){
     char(tData)
     search(cData,tData)
     
-
-    
-        
-        
 }
 //search
 function search(cData,tData){
@@ -92,10 +88,6 @@ function search(cData,tData){
                         }
                     }
             
-                            
-            
-                            
-            
                     }
                         
             
@@ -126,17 +118,12 @@ function search(cData,tData){
                             </tr>
                             
                             `
-                            
                         }
                         console.log(tData[k].amount);
                     }
                     
             
-                            
-            
-                            
-            
-                    }
+                     }
                         
             
                 }
