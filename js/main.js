@@ -177,7 +177,7 @@ function char(tData) {
             
             const chart = new frappe.Chart("#chart", {  
                                                         
-                title: "My Awesome Chart",
+                title: `${naem} Chart`,
                 data: data,
                 type: 'axis-mixed', 
                 height: 250,
