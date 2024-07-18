@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h1 class="text-center mt-3">Customers & Transaction</h1>
+
+    <section class="container py-5">
+        <div class="row">
+            <div class="col-12 my-3">
+                <div class="name">
+                    <input data-search="name" class="form-control" placeholder="Enter Customer Name" type="text">
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="amount">
+                    <input data-search="amount" class="form-control" placeholder="Enter Amount of Transaction" type="text">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <section class=" container">
+
+        
+        <div id="chart"></div>
+            
+
+        </div>
+
+    </section>
+
+
+    <section class="container py-5">
+
+        <table class="w-100 table">
+            <thead>
+                <th>Transaction Id</th>
+                <th>Customer Name</th>
+                <th>Customer Id</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Show Graph</th>
+            </thead>
+            <tbody id="table">
+                <tr>
+                    <td>Transaction Id</td>
+                    <td>Customer Name</td>
+                    <td>Customer id</td>
+                    <td>Amount</td>
+                    <td>date</td>
+                    <td><button class="btn btn-primary">Graph</button></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/frappe-charts@1.2.4/dist/frappe-charts.min.iife.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
